@@ -1356,23 +1356,16 @@ class Person:
 
 
 p1 = Person()
-print(p1.age)
+print(p1.age)  # 0
 p2 = Person()
 # 此时p1的age属性是实例属性，而不是类属性
 p1.age = 10
-print(p1.age)
-print(p2.age)
+print(p1.age)   # 10
+print(p2.age)   # 0
 # 修改类属性
 Person.age = 100
-print(p1.age)
-print(p2.age)
-"""
-0
-10
-0
-10
-100
-"""  
+print(p1.age)   # 10
+print(p2.age)   # 100
 ```
 
 
@@ -1439,6 +1432,21 @@ Dog.info_dog()
 我是狗，哦你也是狗
 """
 ```
+
+
+
+
+
+<center>
+    <b>表xx 静态方法和类方法的差异</b>
+</center>
+
+|        特性         |        静态方法         |          类方法           |
+| :-----------------: | :---------------------: | :-----------------------: |
+|      **参数**       |     无`self`或`cls`     |     必须接受`cls`参数     |
+| **访问类/实例状态** | 不能（无`cls`或`self`） | 能（通过`cls`访问类属性） |
+|    **典型用途**     |        工具函数         |   类操作、替代构造函数    |
+|     **装饰器**      |     `@staticmethod`     |      `@classmethod`       |
 
 
 
@@ -2090,8 +2098,8 @@ def _format_addr(s):
 
 
 # 输入Email地址和口令:
-from_addr = '15070309221@163.com'
-password = 'RETEUKSVPZGFSOLI'
+from_addr = '15*******1@163.com'
+password = 'R********GFSOLI'
 # 输入收件人地址:
 to_addr = '2082004203@qq.com'
 # 输入SMTP服务器地址:
